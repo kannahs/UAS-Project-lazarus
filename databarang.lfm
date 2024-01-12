@@ -1,0 +1,184 @@
+object Form1: TForm1
+  Left = 377
+  Height = 542
+  Top = 37
+  Width = 913
+  Caption = 'Form1'
+  ClientHeight = 542
+  ClientWidth = 913
+  DesignTimePPI = 144
+  object DBGrid1: TDBGrid
+    Left = 16
+    Height = 264
+    Top = 152
+    Width = 268
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBGrid2: TDBGrid
+    Left = 336
+    Height = 256
+    Top = 152
+    Width = 528
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource2
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 368
+    Height = 30
+    Top = 32
+    Width = 152
+    Caption = 'DATA BARANG'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -22
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    Left = 344
+    Height = 33
+    Top = 112
+    Width = 304
+    TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 664
+    Height = 38
+    Top = 107
+    Width = 88
+    Caption = 'Cari'
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Left = 760
+    Height = 38
+    Top = 107
+    Width = 113
+    Caption = 'Reset'
+    TabOrder = 4
+  end
+  object MySQL57Connection1: TMySQL57Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'latihan1'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    Left = 78
+    Top = 50
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL57Connection1
+    Left = 167
+    Top = 48
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'id'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'nama'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end>
+    Active = True
+    Database = MySQL57Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from kategori'
+    )
+    Params = <>
+    Macros = <>
+    Left = 280
+    Top = 48
+  end
+  object SQLQuery2: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'id_barang'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'kategori'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'kategori_id'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'nama'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'gambar'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'harga_beli'
+        DataType = ftBCD
+        Precision = -1
+      end    
+      item
+        Name = 'harga_jual'
+        DataType = ftBCD
+        Precision = -1
+      end    
+      item
+        Name = 'stok'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MySQL57Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from data_barang where kategori_id=:id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'id'
+        ParamType = ptInput
+      end>
+    Macros = <>
+    Left = 40
+    Top = 450
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 120
+    Top = 448
+  end
+  object DataSource2: TDataSource
+    DataSet = SQLQuery2
+    Left = 200
+    Top = 448
+  end
+end
