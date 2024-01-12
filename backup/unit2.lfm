@@ -1,0 +1,140 @@
+object form2: Tform2
+  Left = 377
+  Height = 586
+  Top = 37
+  Width = 866
+  ClientHeight = 586
+  ClientWidth = 866
+  DesignTimePPI = 144
+  object Label1: TLabel
+    Left = 302
+    Height = 32
+    Top = 42
+    Width = 240
+    Caption = 'Form tambah barang'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -24
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 64
+    Height = 25
+    Top = 136
+    Width = 65
+    Caption = 'kategori'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 64
+    Height = 25
+    Top = 184
+    Width = 105
+    Caption = 'nama barang'
+    ParentColor = False
+  end
+  object edtkategori: TEdit
+    Left = 200
+    Height = 33
+    Top = 128
+    Width = 240
+    TabOrder = 0
+  end
+  object edtnama: TEdit
+    Left = 200
+    Height = 33
+    Top = 176
+    Width = 240
+    TabOrder = 1
+  end
+  object Label4: TLabel
+    Left = 64
+    Height = 25
+    Top = 236
+    Width = 78
+    Caption = 'harga beli'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 64
+    Height = 25
+    Top = 280
+    Width = 77
+    Caption = 'harga jual'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 64
+    Height = 25
+    Top = 331
+    Width = 95
+    Caption = 'Jumlah Stok'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 64
+    Height = 25
+    Top = 382
+    Width = 117
+    Caption = 'Lokasi Gambar'
+    ParentColor = False
+  end
+  object edtbeli: TEdit
+    Left = 200
+    Height = 33
+    Top = 228
+    Width = 240
+    TabOrder = 2
+  end
+  object edtjual: TEdit
+    Left = 200
+    Height = 33
+    Top = 279
+    Width = 240
+    TabOrder = 3
+  end
+  object edtstok: TEdit
+    Left = 200
+    Height = 33
+    Top = 331
+    Width = 240
+    TabOrder = 4
+  end
+  object edtgambar: TEdit
+    Left = 200
+    Height = 33
+    Top = 382
+    Width = 240
+    TabOrder = 5
+  end
+  object Button1: TButton
+    Left = 208
+    Height = 38
+    Top = 472
+    Width = 113
+    Caption = 'Simpan'
+    OnClick = Button1Click
+    TabOrder = 6
+  end
+  object Button2: TButton
+    Left = 360
+    Height = 38
+    Top = 472
+    Width = 113
+    Caption = 'Close'
+    TabOrder = 7
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = Form1.MySQL57Connection1
+    Transaction = Form1.SQLTransaction1
+    Params = <>
+    Macros = <>
+    DataSource = Form1.DataSource1
+    Left = 137
+    Top = 469
+  end
+end

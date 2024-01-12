@@ -1,0 +1,138 @@
+object Form1: TForm1
+  Left = 377
+  Height = 566
+  Top = 37
+  Width = 986
+  Caption = 'Form1'
+  ClientHeight = 566
+  ClientWidth = 986
+  DesignTimePPI = 144
+  object Label1: TLabel
+    Left = 184
+    Height = 54
+    Top = 24
+    Width = 500
+    Caption = 'APLIKASI DATA BARANG'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -40
+    Font.Name = 'Segoe UI Black'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 56
+    Height = 38
+    Top = 122
+    Width = 113
+    Caption = 'tambah'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 200
+    Height = 38
+    Top = 122
+    Width = 113
+    Caption = 'ubah'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Button3: TButton
+    Left = 344
+    Height = 38
+    Top = 120
+    Width = 113
+    Caption = 'hapus'
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 72
+    Height = 280
+    Top = 264
+    Width = 696
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 3
+  end
+  object MySQL57Connection1: TMySQL57Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'latihan1'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    Left = 72
+    Top = 184
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL57Connection1
+    Left = 176
+    Top = 184
+  end
+  object SQLQuery1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'id_barang'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'kategori'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'nama'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'gambar'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end    
+      item
+        Name = 'harga_beli'
+        DataType = ftBCD
+        Precision = -1
+      end    
+      item
+        Name = 'harga_jual'
+        DataType = ftBCD
+        Precision = -1
+      end    
+      item
+        Name = 'stok'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MySQL57Connection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from data_barang'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 280
+    Top = 184
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    Left = 375
+    Top = 184
+  end
+end
